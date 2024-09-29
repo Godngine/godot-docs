@@ -60,7 +60,7 @@ To support both architectures in a single "Universal 2" binary, run the above tw
     lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
 
 If you wish to add and use breakpoints while developing, add ``dev_build=yes``
-and dev_mode=yes to the command::
+and ``dev_mode=yes`` to the command::
     
     scons platform=macos arch=x86_64 dev_build=yes dev_mode=yes
 
