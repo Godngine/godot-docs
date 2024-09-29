@@ -248,7 +248,7 @@ Start a terminal, go to the root dir of the engine source code and type:
     ``linuxbsd``. If you are looking to compile Godot 3.x, make sure to use the
     `3.x branch of this documentation <https://docs.godotengine.org/en/3.6/development/compiling/compiling_for_x11.html>`__.
 
-If you wish to add and use breakpoints while developing, add dev_build=yes
+If you wish to add and use breakpoints while developing, add ``dev_build=yes``
 and dev_mode=yes to the command::
     
     scons platform=linuxbsd arch=x86_64 dev_build=yes dev_mode=yes
