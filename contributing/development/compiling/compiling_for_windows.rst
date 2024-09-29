@@ -147,7 +147,7 @@ the engine source code (using ``cd``) and type:
           pywin32 being missing. You can safely ignore this warning.
 
 If you wish to add and use breakpoints while developing, add ``dev_build=yes``
-and dev_mode=yes to the command:
+and ``dev_mode=yes`` to the command:
 
 .. code-block:: doscon
     
