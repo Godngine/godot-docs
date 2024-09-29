@@ -146,12 +146,11 @@ the engine source code (using ``cd``) and type:
 .. note:: When compiling with multiple CPU threads, SCons may warn about
           pywin32 being missing. You can safely ignore this warning.
 
-If you wish to add and use breakpoints while developing, add ``dev_build=yes``
-and ``dev_mode=yes`` to the command:
-
-.. code-block:: doscon
-    
-    C:\godot> scons platform=windows dev_build=yes dev_mode=yes
+.. tip::
+    If you are compiling Godot to make changes or contribute to the engine,
+    you may want to use the SCons options ``dev_build=yes`` or ``dev_mode=yes``. 
+    See `Development and Production Aliases <https://docs.godotengine.org/en/stable/contributing/development/compiling/introduction_to_the_buildsystem.html#development-and-production-aliases>`__
+    for more info.
 
 If all goes well, the resulting binary executable will be placed in
 ``C:\godot\bin\`` with the name ``godot.windows.editor.x86_32.exe`` or
