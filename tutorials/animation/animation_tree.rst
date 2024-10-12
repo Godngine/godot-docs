@@ -16,7 +16,7 @@ However, the support for blending those animations via ``AnimationPlayer`` is li
 It replaces the ancient ``AnimationTreePlayer``, while adding a huge amount of features and flexibility.
 
 AnimationTree and AnimationPlayer
--------------------------
+---------------------------------
 
 Before starting, know that an ``AnimationTree`` node does not contain its own animations.
 Instead, it uses animations contained in an ``AnimationPlayer`` node. You create, edit, or import your animations in an ``AnimationPlayer`` 
