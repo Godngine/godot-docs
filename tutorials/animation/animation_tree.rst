@@ -163,7 +163,7 @@ parameter. Setting the scale to 0 will pause the animation. Setting the scale to
 Transition
 ^^^^^^^^^^
 
-This node is a simplified version of a state machine. You connect animations to the inputs, and the current state index determines which animation to play.
+This node is a simplified version of a StateMachine. You connect animations to the inputs, and the current state index determines which animation to play.
 You may specify a crossfade transition time. In the Inspector, you may change the number of input ports, rearrange inputs, or delete inputs.
 
 .. image:: img/animtree_transition.webp
@@ -277,8 +277,8 @@ Here is the same example, but using Advance Expression rather than Advance Condi
 In order to use Advance Expressions, the Advance Expression Base Node has to be set from the Inspector of the AnimationTree node. By default, it is set
 to the AnimationTree node itself, but it needs to point to whatever node contains the script with your animation variables.
 
-State machine travel
-^^^^^^^^^^^^^^^^^^^^
+StateMachine travel
+^^^^^^^^^^^^^^^^^^^
 
 One of the nice features in Godot's ``StateMachine`` implementation is the ability to travel. You can instruct the graph to go from the
 current state to another one, while visiting all the intermediate ones. This is done via the A\* algorithm.
@@ -298,9 +298,7 @@ object from the ``AnimationTree`` node (it is exported as a property), and then 
     AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
     stateMachine.Travel("SomeState");
 
-The state machine must be running before you can travel. Make sure to either call ``start()`` or choose a node to **Autoplay on Load**.
-
-.. image:: img/animtree_autoplay.webp
+The StateMachine must be running before you can travel. Make sure to either call ``start()`` or connect a node to **Start**.
 
 BlendSpace2D and BlendSpace1D
 -----------------------------
@@ -422,7 +420,7 @@ After building the tree and previewing it, the only question remaining is "How i
 Keep in mind that the animation nodes are just resources, so they are shared between all instances using them.
 Setting values in the nodes directly will affect all instances of the scene that uses this ``AnimationTree``.
 This is generally undesirable, but does have some cool use cases, e.g. you can copy and paste parts of your animation tree,
-or reuse nodes with a complex layout (such as a state machine or blend space) in different animation trees.
+or reuse nodes with a complex layout (such as a StateMachine or blend space) in different animation trees.
 
 The actual animation data is contained in the ``AnimationTree`` node and is accessed via properties.
 Check the "Parameters" section of the ``AnimationTree`` node to see all the parameters that can be modified in real-time:
