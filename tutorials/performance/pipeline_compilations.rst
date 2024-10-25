@@ -3,6 +3,13 @@ Reducing Stutter from Shader (Pipeline) Compilations
 
 Pipeline compilation, also commonly known as shader compilation, is an expensive operation required by the engine to be able to draw any kind of content with the GPU. 
 
+.. figure:: img/pipeline_compilations_shader_compilation_diagram.webp
+   :align: center
+   :alt: Flowchart showing the entire compilation process for a shader: VisualShader and Standard Material to GDShader to GLSL to Intermediate Format (SPIR-V) to Pipeline. Shader Compilation is the GLSL to Intermediate Format step. Pipeline Compilation is the Intermediate Format to Pipeline step.
+
+   Shaders and materials in Godot go through several steps before they can be run
+   by the GPU.
+
 In more precise terms, *Shader Compilation* involves the translation of the GLSL code that Godot generates into an intermediate format that can be shared across systems (such as SPIR-V when using Vulkan). However, this format can't be used by the GPU directly. *Pipeline Compilation* is the step the GPU driver performs where it'll convert the intermediate shader format (the result from shader compilation) to something the GPU can actually use for rendering. Drivers usually keep a cache of pipelines stored somewhere in the system to avoid repeating the process every time a game is run. This cache is usually deleted when the driver is updated.
 
 Pipelines contain more information than just the shader code, which means that for each shader, there can be dozens of pipelines or more! This makes it difficult for an engine to compile them ahead of time, both because it would be very slow, and because it would take up a lot of memory. On top of that, this step can only be performed on the user's system and it is very tough to share the result between users unless they have the exact same hardware and driver version.
