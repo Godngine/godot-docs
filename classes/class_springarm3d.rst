@@ -23,6 +23,13 @@ Description
 
 .. rst-class:: classref-reftable-group
 
+Tutorials
+---------
+
+- :doc:`Third-person camera with spring arm <../tutorials/3d/spring_arm>`
+
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
